@@ -1,0 +1,85 @@
+.mui-form {
+  &-item {
+    box-sizing: border-box;
+    padding: 0 16px;
+    width: 100%;
+    &.mui-form-item-card {
+      padding: 0 12px;
+    }
+
+    &-inner {
+      padding: 14px 0;
+      display: flex;
+      width: 100%;
+    }
+
+    &-bordered {
+      border-bottom: 1px solid #e6e8f2;
+    }
+
+    &-label {
+      flex-shrink: 0;
+      margin-right: 18px;
+      width: 86px;
+      line-height: 20px;
+      color: #1f2129;
+    }
+
+    &-label-inner {
+      display: inline-block;
+      word-break: break-all;
+      position: relative;
+    }
+
+    &-label-required {
+      .mui-form-item-label-inner {
+        &::after {
+          content: '*';
+          position: absolute;
+          right: -10px;
+          top: 0;
+          color: #e6300b;
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    &-vertial {
+      .mui-form-item-inner {
+        flex-direction: column;
+      }
+      .mui-form-item-label {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 14px;
+        overflow: hidden;
+        display: flex;
+      }
+    }
+
+    &-control {
+      flex-grow: 1;
+      overflow: hidden;
+    }
+
+    &-extra {
+      color: #979aa8;
+      line-height: 20px;
+    }
+    &-extra-vertical {
+      color: #979aa8;
+      margin-left: 28px;
+    }
+    &-extra-horizental {
+      margin-top: 8px;
+    }
+
+    &-error {
+      font-size: 10px;
+      line-height: 14px;
+      color: #e62021;
+      margin-top: 2px;
+    }
+  }
+}
