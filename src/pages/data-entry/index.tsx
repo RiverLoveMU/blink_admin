@@ -25,9 +25,7 @@ const DataEntry: React.FC = () => {
     console.log(val);
   };
 
-  return (
-    <div>111</div>
-  );
+  return <div className="lottery-container">111</div>;
 };
 
 export default DataEntry;

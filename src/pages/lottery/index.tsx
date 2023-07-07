@@ -1,11 +1,10 @@
 import * as React from "react";
 import { Button, message } from "antd";
-import "./index.less";
 
 const max = 100;
 
 const gifts = [
-  { name: "礼物一", winner: 88 },
+  { name: "礼物一", winner: [88, 77] },
   { name: "礼物二" },
   { name: "礼物三" },
   { name: "礼物四" },
@@ -54,17 +53,18 @@ const Lottery = () => {
       intervalRef.current = setInterval(() => {
         const number = checkNumber(getRandomNumber());
         changeLuckyNumber(number);
-      }, 60);
+      }, 50);
     }
 
     return () => {
       if (intervalRef.current) {
-        const winnerNumber = gifts[currentGift]?.winner;
+        const winnerNumber = gifts[currentGift]?.winner?.[0];
         if (
           winnerNumber &&
           !usedLuckyNumberListRef.current.includes(winnerNumber)
         ) {
-          changeLuckyNumber(gifts[currentGift]?.winner);
+          changeLuckyNumber(winnerNumber);
+          gifts[currentGift]?.winner?.shift();
         }
         if (typeof luckyNumberRef.current == "number") {
           usedLuckyNumberListRef.current.push(luckyNumberRef.current);
@@ -78,10 +78,10 @@ const Lottery = () => {
   }, [inProgress, currentGift, changeLuckyNumber, checkNumber]);
 
   return (
-    <div className="lottery-container">
-      <div className="lottery-gift">礼物：{gifts[currentGift].name}</div>
-      <h1 className="lottery-title">幸运抽奖</h1>
-      <div className="lottery-lucky">{luckyNumber || "?"}</div>
+    <div className="wedding-container">
+      <h1 className="wedding-title">幸运抽奖</h1>
+      <div className="wedding-gift">礼物：{gifts[currentGift].name}</div>
+      <div className="wedding-lucky">{luckyNumber || "?"}</div>
       <div>
         <Button
           onClick={() => {
@@ -95,11 +95,11 @@ const Lottery = () => {
           }}
           size="large"
           ghost
-          className="lottery-draw"
+          className="wedding-draw"
         >
           上一个
         </Button>
-        <Button onClick={start} size="large" ghost className="lottery-draw">
+        <Button onClick={start} size="large" ghost className="wedding-draw">
           {inProgress ? "开奖" : "开始"}
         </Button>
         <Button
@@ -114,7 +114,7 @@ const Lottery = () => {
           }}
           size="large"
           ghost
-          className="lottery-draw"
+          className="wedding-draw"
         >
           下一个
         </Button>

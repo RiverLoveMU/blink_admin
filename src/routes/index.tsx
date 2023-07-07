@@ -3,6 +3,7 @@ import MemberList from "@/pages/member-list/index";
 import DataEntry from "@/pages/data-entry";
 import TestPage from "@/pages/test-page";
 import Lottery from "@/pages/lottery";
+import Game from "@/pages/game";
 import { ROUTE_KEY_PREFIX } from "@/common/constants";
 
 export interface IRoute {
@@ -16,10 +17,16 @@ export interface IRoute {
 
 export const routes: IRoute[] = [
   {
-    name: "数据录入",
+    name: "抽奖",
     key: `${ROUTE_KEY_PREFIX}lottery`,
     path: "/lottery",
     component: Lottery,
+  },
+  {
+    name: "抽奖",
+    key: `${ROUTE_KEY_PREFIX}game`,
+    path: "/game",
+    component: Game,
   },
   {
     name: "数据录入",
