@@ -19,7 +19,7 @@ const gifts: giftItem[] = [
   { name: "罗马仕充电宝", pic: romoss },
   { name: "华为手环", pic: huawei },
   { name: "千里江山泡茶杯", pic: cup },
-  { name: "福禄寿喜碗", pic: bowl },
+  { name: "福禄寿喜青瓷碗", pic: bowl },
   { name: "小熊养生壶", pic: bear },
   { name: "飞利浦电动牙刷", pic: philips },
 ];

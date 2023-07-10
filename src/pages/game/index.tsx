@@ -125,7 +125,7 @@ const gameList = [
   },
 ];
 
-const time = 120;
+const time = 90;
 
 const Lottery = () => {
   const [currentType, setCurrentType] = React.useState<number>();
