@@ -1,15 +1,27 @@
 import * as React from "react";
-import { Button, message } from "antd";
+import { Button, message, Image } from "antd";
+import bear from "@/common/images/bear.jpg";
+import huawei from "@/common/images/huawei.png";
+import romoss from "@/common/images/romoss.jpg";
+import philips from "@/common/images/philips.jpg";
+import bowl from "@/common/images/bowl.jpeg";
+import cup from "@/common/images/cup.jpeg";
 
 const max = 100;
 
-const gifts = [
-  { name: "礼物一", winner: [88, 77] },
-  { name: "礼物二" },
-  { name: "礼物三" },
-  { name: "礼物四" },
-  { name: "礼物五" },
-  { name: "礼物六" },
+type giftItem = {
+  name: string;
+  winner?: number[];
+  pic: string;
+};
+
+const gifts: giftItem[] = [
+  { name: "罗马仕充电宝", pic: romoss },
+  { name: "华为手环", pic: huawei },
+  { name: "千里江山泡茶杯", pic: cup },
+  { name: "福禄寿喜碗", pic: bowl },
+  { name: "小熊养生壶", pic: bear },
+  { name: "飞利浦电动牙刷", pic: philips },
 ];
 
 const getRandomNumber = () => {
@@ -18,6 +30,7 @@ const getRandomNumber = () => {
 
 const Lottery = () => {
   const [inProgress, setInProgress] = React.useState(false);
+  const [visible, setVisible] = React.useState(false);
   const [luckyNumber, setLuckyNumber] = React.useState<number>();
   const luckyNumberRef = React.useRef<number>();
   const [currentGift, setCurrentGift] = React.useState(0);
@@ -80,7 +93,17 @@ const Lottery = () => {
   return (
     <div className="wedding-container">
       <h1 className="wedding-title">幸运抽奖</h1>
-      <div className="wedding-gift">礼物：{gifts[currentGift].name}</div>
+      <div className="wedding-gift">
+        礼物：{gifts[currentGift].name}{" "}
+        <span
+          onClick={() => {
+            setVisible(true);
+          }}
+          className="wedding-preview"
+        >
+          礼品图
+        </span>
+      </div>
       <div className="wedding-lucky">{luckyNumber || "?"}</div>
       <div>
         <Button
@@ -119,6 +142,16 @@ const Lottery = () => {
           下一个
         </Button>
       </div>
+
+      <Image
+        src={gifts[currentGift].pic}
+        preview={{
+          visible,
+          onVisibleChange: (value) => {
+            setVisible(value);
+          },
+        }}
+      />
     </div>
   );
 };
