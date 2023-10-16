@@ -17,6 +17,12 @@ export interface IRoute {
 
 export const routes: IRoute[] = [
   {
+    name: "测试页面",
+    key: `${ROUTE_KEY_PREFIX}test_page`,
+    path: "/test_page",
+    component: TestPage,
+  },
+  {
     name: "抽奖",
     key: `${ROUTE_KEY_PREFIX}lottery`,
     path: "/lottery",
@@ -33,12 +39,6 @@ export const routes: IRoute[] = [
     key: `${ROUTE_KEY_PREFIX}data_entry`,
     path: "/data_entry",
     component: DataEntry,
-  },
-  {
-    name: "测试页面",
-    key: `${ROUTE_KEY_PREFIX}test_page`,
-    path: "/test_page",
-    component: TestPage,
   },
   {
     name: "数据台",
