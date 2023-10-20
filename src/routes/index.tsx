@@ -6,6 +6,7 @@ import Lottery from "@/pages/lottery";
 import Signature from "@/pages/signature";
 import Game from "@/pages/game";
 import File from "@/pages/file";
+import VideoTest from "@/pages/video-test";
 import { ROUTE_KEY_PREFIX } from "@/common/constants";
 
 export interface IRoute {
@@ -35,6 +36,12 @@ export const routes: IRoute[] = [
     key: `${ROUTE_KEY_PREFIX}file`,
     path: "/file",
     component: File,
+  },
+  {
+    name: "视频截图",
+    key: `${ROUTE_KEY_PREFIX}video_test`,
+    path: "/video_test",
+    component: VideoTest,
   },
   {
     name: "抽奖",
