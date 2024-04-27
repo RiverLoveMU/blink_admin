@@ -7,6 +7,11 @@ import Signature from "@/pages/signature";
 import Game from "@/pages/game";
 import File from "@/pages/file";
 import VideoTest from "@/pages/video-test";
+import ExcelReader from "@/pages/excel-reader";
+import PicTest from "@/pages/pic-test";
+import Observer from "@/pages/observer";
+import Touch from "@/pages/touch";
+import TestWorker from "@/pages/test-worker";
 import { ROUTE_KEY_PREFIX } from "@/common/constants";
 
 export interface IRoute {
@@ -19,6 +24,36 @@ export interface IRoute {
 }
 
 export const routes: IRoute[] = [
+  {
+    name: "testWorker",
+    key: `${ROUTE_KEY_PREFIX}testWorker`,
+    path: "/testWorker",
+    component: TestWorker,
+  },
+  {
+    name: "touch",
+    key: `${ROUTE_KEY_PREFIX}touch`,
+    path: "/touch",
+    component: Touch,
+  },
+  {
+    name: "observer",
+    key: `${ROUTE_KEY_PREFIX}observer`,
+    path: "/observer",
+    component: Observer,
+  },
+  {
+    name: "picTest",
+    key: `${ROUTE_KEY_PREFIX}pic_test`,
+    path: "/pic_test",
+    component: PicTest,
+  },
+  {
+    name: "转excel",
+    key: `${ROUTE_KEY_PREFIX}excel_reader`,
+    path: "/excel_reader",
+    component: ExcelReader,
+  },
   {
     name: "测试页面",
     key: `${ROUTE_KEY_PREFIX}test_page`,

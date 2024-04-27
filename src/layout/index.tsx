@@ -98,7 +98,7 @@ const CommonLayout: React.FC = () => {
           );
         }
 
-        console.log(route);
+        // console.log(route);
 
         return (
           <Route
